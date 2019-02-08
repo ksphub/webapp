@@ -8,7 +8,7 @@ node {
        sh label: '', script: 'mvn package'
    }
    stage ('archival') {
-       // archiving artifacts
+       // archiving artifacts2
        archiveArtifacts 'target/*.war'   
    }
 }
