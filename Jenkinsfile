@@ -5,7 +5,7 @@ node {
    }
    stage ('build the packages') {
        // mvn package
-       sh label: '', script: 'mvn package'
+       sh label: 'labmaven1', script: 'mvn package'
    }
    stage ('archival') {
        // archiving artifacts2
