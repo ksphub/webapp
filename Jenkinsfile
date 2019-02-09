@@ -15,4 +15,8 @@ node('labmaven1') {
        // uploading Artifact to Nexus
 	nexusArtifactUploader artifacts: [[artifactId: 'WebApp-$BUILD_TIMESTAMP', classifier: '', file: 'target/WebApp.war', type: 'war']], credentialsId: '61d480f1-d9f3-4920-96a0-4bdebac3f070', groupId: 'Prod', nexusUrl: '172.31.93.102:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'kspnrepo1', version: '$BUILD_ID'
    }
+   stage ('deploy2apache') {
+       // Deployment Apache
+       sh label: '', script: 'cp target/WebApp.war /opt/tomcat/webapps/'
+   }
 }
