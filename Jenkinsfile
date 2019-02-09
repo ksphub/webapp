@@ -17,6 +17,6 @@ node('labmaven1') {
    }
    stage ('deploy2apache') {
        // Deployment Apache
-       sh label: '', script: 'cp target/WebApp.war /opt/tomcat/webapps/'
+       sh label: '', script: 'sudo cp target/WebApp.war /opt/tomcat/webapps/'
    }
 }
